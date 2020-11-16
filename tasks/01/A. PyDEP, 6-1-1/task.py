@@ -5,8 +5,7 @@ from pathlib import Path
 
 
 if __name__ == '__main__':
-    path = Path(__file__).absolute().parent.parent.parent.parent \
-           / 'data' / 'input611.txt'
+    path = Path(__file__).absolute().parent / 'input.txt'
     with open(path, 'r', encoding='utf8') as fin:
         text = fin.read()
 
