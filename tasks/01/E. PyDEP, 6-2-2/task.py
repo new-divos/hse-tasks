@@ -17,13 +17,9 @@ if __name__ == '__main__':
         words = re.findall(r'\w+', line)
         total_words += len(words)
 
-        for word in words:
-            total_letters += len(word)
+        total_letters += sum(len(word) for word in words)
 
-    print(
-        "Input file contains: {} letters {} words {} lines".format(
-            total_letters,
-            total_words,
-            total_lines
-        )
-    )
+    print("Input file contains:")
+    print(f"{total_letters} letters")
+    print(f"{total_words} words")
+    print(f"{total_lines} lines")
