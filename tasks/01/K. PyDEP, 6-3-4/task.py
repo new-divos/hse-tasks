@@ -3,7 +3,6 @@
 
 import csv
 from pathlib import Path
-import sys
 
 
 if __name__ == '__main__':
@@ -24,14 +23,10 @@ if __name__ == '__main__':
 
                 shops[row[0]] = prices
 
-    min_price = sys.float_info.max
-    target_shop = target_meal = None
-
+    ordered = []
     for shop, meals in shops.items():
         for meal, price in meals.items():
-            if min_price > price:
-                min_price = price
-                target_shop = shop
-                target_meal = meal
+            ordered.append((price, meal, shop))
 
-    print(f"{target_shop}, {target_meal}, {min_price}")
+    ordered.sort()
+    print(f"{ordered[0][1]}\n{ordered[0][2]}")
