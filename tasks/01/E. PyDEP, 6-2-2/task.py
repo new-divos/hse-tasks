@@ -14,7 +14,7 @@ if __name__ == '__main__':
     total_words = total_letters = 0
 
     for line in lines:
-        words = re.findall(r'\w+', line)
+        words = re.findall(r'[A-Za-z]+', line)
         total_words += len(words)
 
         total_letters += sum(len(word) for word in words)
