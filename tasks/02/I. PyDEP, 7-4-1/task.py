@@ -15,7 +15,7 @@ if __name__ == '__main__':
     )
     soup = BeautifulSoup(r.data.decode('utf8'), 'html.parser')
 
-    links = set()
+    links = list()
     for link in soup.find_all('a'):
         if link.has_attr('href'):
             href = link['href']
@@ -24,6 +24,6 @@ if __name__ == '__main__':
                     ':' not in href and \
                     not href.startswith('#') and \
                     '.org' not in href:
-                links.add(href)
+                links.append(href)
 
     print(len(links))
