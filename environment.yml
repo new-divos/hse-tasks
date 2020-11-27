@@ -15,5 +15,6 @@ dependencies:
   - pip
   - pip:
       - html5lib
+      - lxml
       - openpyxl
       - tqdm
