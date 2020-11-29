@@ -17,14 +17,17 @@ if __name__ == '__main__':
 
     nodes = {}
     for node in soup.find_all('node'):
-        nodes[node['id']] = (node['lat'], node['lon'])
+        nodes[int(node['id'])] = (
+            float(node['lat']),
+            float(node['lon']),
+        )
 
     buildings = []
     for way in soup.find_all('way'):
 
         refs = []
         for nd in way('nd'):
-            refs.append(nd['ref'])
+            refs.append(int(nd['ref']))
 
         if len(nodes) > 1 and refs[0] == refs[-1]:
             for tag in way('tag'):
