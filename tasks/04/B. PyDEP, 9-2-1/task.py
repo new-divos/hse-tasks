@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from pathlib import Path
-
 import json
+from pathlib import Path
 
 
 if __name__ == '__main__':
