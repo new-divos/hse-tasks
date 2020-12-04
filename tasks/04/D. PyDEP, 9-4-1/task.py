@@ -47,5 +47,5 @@ if __name__ == '__main__':
                     districts[district] = addresses
                     areas[adm_area] = districts
 
-    with open(Path.home() / 'output.json', 'w', encoding='utf8') as fout:
-        json.dump(areas, fout, ensure_ascii=False)
+    with open(Path.home() / 'output.json', 'w') as fout:
+        json.dump(areas, fout)
